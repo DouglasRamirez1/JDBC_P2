@@ -145,6 +145,7 @@ public class UserController {
     @PutMapping("/users")
     public @ResponseBody
     User updateUser(@RequestBody User user) {
-        return userService.saveUser(user);
+        User u = userService.saveUser(user);
+        return u;
     }
 }

@@ -93,10 +93,9 @@ public class CommentController {
     }
 
     /**
-     * Takes in a request to create a new Comment object in the database using content,
-     * userId, and reviewId parameters and redirects to the comments html page afterwards.
+     * Takes in a request to create a new Comment object in the database using content
+     * and reviewId parameters and redirects to the comments html page afterwards.
      * @param content
-     * @param userId
      * @param reviewId
      * @return a String
      */
@@ -140,13 +139,12 @@ public class CommentController {
     /**
      * Takes in a request to delete a specific Comment object in the database based on its
      * commentId and returns an HTTPStatus OK code afterward.
-     * @param commentId
+     * @param id
      * @return HTTPStatus code 200
      */
     @DeleteMapping("/comments/{id}")
-    public @ResponseBody
-    ResponseEntity<HttpStatus> deleteComment(@PathVariable String commentId){
-        commentService.deleteComment(Integer.parseInt(commentId));
+    ResponseEntity<HttpStatus> deleteComment(@PathVariable String id){
+        commentService.deleteComment(Integer.parseInt(id));
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
