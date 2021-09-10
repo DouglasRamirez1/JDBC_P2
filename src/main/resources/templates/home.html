@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhibliHub Home</title>
+    <link rel="stylesheet" href="css/filmsStyle.css">
+    <script>
+        function submit() {
+            document.getElementById("logout").submit();
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <div class="navBar">
+        <h1 class="navHeader">GhibliHub</h1>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <a onclick="submit()" href="#" class="button">Logout</a>
+        </form>
+        <a href="/about" class="button">About</a>
+
+        <!--        <a href="/profile" class="button">Profile</a>-->
+        <a href="/films" class="button">Films</a>
+        <a href="/home" class="button">Home</a>
+    </div>
+</nav>
+
+<div class="banner">
+    <img class="GhibliLogo" src="images/homePage/Studio-Ghibli-logo.png">
+</div>
+    <div>
+        <img id="leftImages" src="images/homePage/LeftImages.png">
+    </div>
+    <div>
+        <img id="rightImages" src="images/homePage/RightImages.png">
+    </div>
+    <div class="wrapper">
+        <div id="headerMessage">
+            <h1>Welcome to GhibliHub!</h1>
+            <h2>The home for all Ghibli fans!</h2>
+        </div>
+
+        <div id="message">
+            You are about to enter a haven exclusively for Studio Ghibli fans.
+            Once you have created an account and logged in, the community will
+            welcome you with open arms. Review movies, engage in discussions, and
+            overall have a relaxing time. We hope you enjoy your stay at GhibliHub!
+        </div>
+
+        <a href="/films" class="button">Enter</a>
+
+    </div>
+    <div id="bottomImages">
+        <img src="images/homePage/BottomImages.png">
+    </div>
+
+
+</body>
+</html>

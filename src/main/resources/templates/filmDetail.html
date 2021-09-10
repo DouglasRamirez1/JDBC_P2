@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Detail Page</title>
+    <link rel="stylesheet" href="../../css/filmsStyle.css">
+    <script>
+        function submit() {
+            document.getElementById("logout").submit();
+        }
+    </script>
+</head>
+<header>
+    <div style="background-color: #DEB887;;">
+    </div>
+</header>
+
+<body>
+<nav>
+    <div class="navBar">
+        <h1 class="navHeader">GhibliHub</h1>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <a onclick="submit()" href="#" class="button">Logout</a>
+        </form>
+        <a href="/about" class="button">About</a>
+
+        <!--        <a href="/profile" class="button">Profile</a>-->
+        <a href="/films" class="button">Films</a>
+        <a href="/home" class="button">Home</a>
+    </div>
+</nav>
+<br>
+<br>
+    <div id="container">
+        <h1 id="filmName">${film.title}</h1>
+        <div class="wrapper">
+            <section id="singleFilm">
+
+            </section>
+        </div>
+
+        <div class="wrapper">
+            <center>
+                <section id="filmReviews">
+                    <h1>Reviews</h1>
+
+                    <form id="reviewForm" action="#" method="POST">
+
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rating" value="1" required checked="checked"/>
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+                        <br><br>
+
+                        <textarea name="content" id="content" cols="82" rows="10"></textarea>
+                        <br><br>
+                        <input type="submit" value="Submit Review"/>
+                    </form>
+                </section>
+            </center>
+        </div>
+
+    </div>
+
+
+    <script src="../../js/singleFilm.js"></script>
+</body>
+
+<footer>
+    <div style="background-color: #DEB887;">
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhibliHub New User</title>
+    <link rel="stylesheet" href="../css/filmsStyle.css">
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        form {text-align: center;}
+    </style>
+    <script>
+        function submit() {
+            document.getElementById("logout").submit();
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <div class="navBar">
+        <h1 class="navHeader">GhibliHub</h1>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <a onclick="submit()" href="#" class="button">Logout</a>
+        </form>
+        <a href="/about" class="button">About</a>
+
+        <!--        <a href="/profile" class="button">Profile</a>-->
+        <a href="/films" class="button">Films</a>
+        <a href="/home" class="button">Home</a>
+    </div>
+</nav>
+<h1>New User Registration<br></h1>
+<p>Please fill out all of the field boxes:<br></p>
+<div th:if="${param.error}">
+    <p>Invalid username already exist.</p>
+</div>
+
+<form action="/login/newuser" method="POST">
+
+    <input name="username" id="username" placeholder="Username">
+    <br><br>
+
+    <input name="password" type="password" id="password" placeholder="Password">
+    <br><br>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

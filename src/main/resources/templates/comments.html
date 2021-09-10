@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments Page</title>
+    <link rel="stylesheet" href="../../../css/filmsStyle.css">
+    <script>
+        function submit() {
+            document.getElementById("logout").submit();
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <div class="navBar">
+        <h1 class="navHeader">GhibliHub</h1>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <a onclick="submit()" href="#" class="button">Logout</a>
+        </form>
+        <a href="/about" class="button">About</a>
+
+        <!--        <a href="/profile" class="button">Profile</a>-->
+        <a href="/films" class="button">Films</a>
+        <a href="/home" class="button">Home</a>
+    </div>
+</nav>
+    <div class="wrapper">
+        <center>
+            <section id="currentReview">
+                <h2>Review</h2>
+            </section>
+
+            <section id="allComments">
+                <h2>Comments</h2>
+            </section>
+            <div class="commentFormWrapper">
+                <form action="#" method="POST">
+                    <textarea name="content" id="content" cols="60" rows="10"></textarea>
+                    <br>
+                    <input type="submit" value="Submit Comment"/>
+                </form>
+            </div>
+        </center>
+    </div>
+
+    <script src="../../../js/comment.js"></script>
+</body>
+</html>

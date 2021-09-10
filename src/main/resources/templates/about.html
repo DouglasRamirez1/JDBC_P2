@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="stylesheet" href="css/filmsStyle.css">
+    <script>
+        function submit() {
+            document.getElementById("logout").submit();
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <div class="navBar">
+        <h1 class="navHeader">GhibliHub</h1>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <a onclick="submit()" href="#" class="button">Logout</a>
+        </form>
+        <a href="/about" class="button">About</a>
+
+<!--        <a href="/profile" class="button">Profile</a>-->
+        <a href="/films" class="button">Films</a>
+        <a href="/home" class="button">Home</a>
+    </div>
+</nav>
+
+<center>
+    <div class="pageHeader">
+        <h1 style="color: white;"> About </h1>
+    </div>
+    <h3 style="color: white;">Developers: Douglas Ramirez &#8226; Christopher Zhang &#8226; Brett Davis &#8226; Jintao Lin</h3>
+
+    <br>
+    <div class="parentContainer">
+        <div class="boxCenterWrapper">
+            <h2 style="color: white;">Tech Stack</h2>
+            <hr>
+            <br>
+            <div class="container">
+                <h3>Back-end</h3>
+            </div>
+
+            <div class="container">
+                <h3>Front-end</h3>
+            </div>
+
+            <div class="container">
+                <h3>Other Technologies</h3>
+            </div>
+
+            <div class="container">
+                <h3>Statistics</h3>
+                <p>Total Commits:</p>
+                <p>Total Issues:</p>
+            </div>
+        </div>
+    </div>
+</center>
+
+</body>
+</html>

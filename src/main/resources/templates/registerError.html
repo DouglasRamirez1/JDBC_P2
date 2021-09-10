@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <script>(()=>{
+        setTimeout(
+            function returnPage(){
+                document.getElementById("return").submit()
+            }
+            ,3000
+        )
+    })()
+</script>
+</head>
+<body>
+<nav>
+    <div class="navBar">
+        <h1 class="navHeader">GhibliHub</h1>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <a onclick="submit()" href="#" class="button">Logout</a>
+        </form>
+        <a href="/about" class="button">About</a>
+
+        <!--        <a href="/profile" class="button">Profile</a>-->
+        <a href="/films" class="button">Films</a>
+        <a href="/home" class="button">Home</a>
+    </div>
+</nav>
+    <h1>Username already exists... returning to new user account creation</h1>
+    <form action="/login/newuserPage" id="return"></form>
+</body>
+</html>
